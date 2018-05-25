@@ -1,0 +1,70 @@
+1. Title of Database: Crops Data
+
+2. Sources:
+	(a) Origin owners Of Database:
+	Department of Computer Application
+	National Institute Of Technology, Raipur
+	(contact:Afsar Ahmad 918630321244,afsaredrisy@gmail.com)
+	(b) Donor of database:
+		Afsar Ahmad (MCA 3rd year NIT , Raipur afsaredisy@gmail.com)
+		Madhavi Kumari (MCA 3rd year NIT ,Raipur kumarimadhavi25"gmail.com)
+
+3. Past Usage:
+	Dataset was used in All India Research Championship(AIRC) at (IIT kanpur)
+	
+
+
+   -- Test set performance (final 1044 examples, first 3133 used for training):
+	24.86% Cascade-Correlation (no hidden nodes)
+	26.25% Cascade-Correlation (5 hidden nodes)
+	21.5%  C4.5
+	 0.0%  Linear Discriminate Analysis
+	 3.57% k=2 Nearest Neighbour
+      (Problem encoded as a classification task)
+
+-- Data set samples are highly overlapped.  Further information is required
+	to separate completely using affine combinations.  Other restrictions
+	to data set examined.
+
+
+4. Relevant Information Paragraph:
+
+   Dataset can be used to train the Machine Learning model which will
+   predict whether irrigation is required or not based on the values 
+   of 5 parametrs.  
+
+   From the original data examples with missing values were removed (the
+   majority having the predicted value missing), and the ranges of the
+   continuous values have been scaled.
+6. Number of Attributes: 6
+
+7. Attribute information:
+	Given is the attribute name, attribute type, the measurement unit and a
+   brief description.  The number of class is the value to predict: either
+   as a continuous value or as a classification problem.
+
+	Name		Data Type	Meas.	Description
+	----		---------	-----	-----------
+	CropType	nominal			fixed Numeric values (1->Wheat blow is for all)
+	CropDays	nominal			Days passed after sowing crop
+	SoilMoisture	continuous	DHT11	Soil Moisture , Can be read by soil moisture sensor
+	temperature	continuous	°C	perpendicular to length
+	Humidity	continuous	%	with meat in shell
+	Y (class)	Binary			1 for Irrigation required 0 for not
+
+	CropTypes possible Values
+	Value				Crop
+	----				----
+	1				Wheat
+	2				Ground Nuts
+	3				Garden flowers
+	4				Maize
+	5				Paddy
+	6				Potato
+	7				pulse
+	8				SugerCane
+	9				coffee
+
+
+ 
+
