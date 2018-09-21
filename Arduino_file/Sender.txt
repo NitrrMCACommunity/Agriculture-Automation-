@@ -1,0 +1,45 @@
+#include <XBee.h>
+#include<dht.h>
+
+#define FIELD_ID 333   //Fields's ID
+
+#define PIN 7
+dht DHT;
+
+XBee xbee = XBee();
+union u_tag {
+    uint8_t b[4];
+    float fval;
+} u;
+void setup() {
+  Serial.begin(9600);
+  xbee.setSerial(Serial);
+}
+void loop() {
+  uint8_t data[] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+  int chk=DHT.read11(PIN);
+  float t=DHT.temperature;
+  float h=DHT.humidity;
+  Serial.println(t);
+  Serial.println(h);
+  u.fval=t;
+  for(int i=0;i<4;i++)
+  data[i]=u.b[i];
+  u.fval=h;
+  for(int i=0;i<4;i++)
+  data[i+4]=u.b[i];
+  int s= analogRead(A0);
+  Serial.println(s);
+  u.fval=s;
+  for(int i=0;i<4;i++)
+  data[i+8]=u.b[i];
+  u.fval=FIELD_ID;
+    for(int i=0;i<4;i++)
+  data[i+12]=u.b[i];
+  XBeeAddress64 addr64 = XBeeAddress64();
+  addr64.setMsb(0);
+  addr64.setLsb(0);
+  ZBTxRequest zbTx = ZBTxRequest(addr64, data, sizeof(data));
+  xbee.send(zbTx);
+  delay(3000);
+}
