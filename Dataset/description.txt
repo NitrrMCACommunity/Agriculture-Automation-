@@ -8,6 +8,7 @@
 	(b) Donor of database:
 		Afsar Ahmad (MCA 3rd year NIT , Raipur afsaredisy@gmail.com)
 		Madhavi Kumari (MCA 3rd year NIT ,Raipur kumarimadhavi25"gmail.com)
+                Basant Kumar Mehta (MCA 3rd year NIT, Raipur basantkumarmehta24@gmail.com)
 
 3. Past Usage:
 	Dataset was used in All India Research Championship(AIRC) at (IIT kanpur)
@@ -48,7 +49,7 @@
 	CropType	nominal			fixed Numeric values (1->Wheat blow is for all)
 	CropDays	nominal			Days passed after sowing crop
 	SoilMoisture	continuous	DHT11	Soil Moisture , Can be read by soil moisture sensor
-	temperature	continuous	°C	perpendicular to length
+	temperature	continuous	Â°C	perpendicular to length
 	Humidity	continuous	%	with meat in shell
 	Y (class)	Binary			1 for Irrigation required 0 for not
 
